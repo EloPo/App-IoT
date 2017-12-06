@@ -1,0 +1,16 @@
+.modal {
+  z-index: 99999;
+  width: 80%;
+  height: 25%;
+  background-color: white;
+  position: absolute;
+  padding: 20px;
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.close {
+  text-align: right;
+  font-size: 25px
+}

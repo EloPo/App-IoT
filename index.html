@@ -1,15 +1,108 @@
 <html>
- <head>
- <title>Teste inicial</title>
- <meta charset="UTF-8"> 
- <link rel="stylesheet" type="text/css" href="mage.css">
- </head>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="mobileui/fonts.css">
+    <link rel="stylesheet" type="text/css" href="mobileui/style.css">
+    <title>Teste inicial</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="mage.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="modal.css">
+</head>
+
 <body>
-<center><h1>Olá mundo!</h1>
-    
-    <img src="imagem.png" alt="lampada" width="141" height="100">
-    <img src="imagem.png" alt="lampada" width="141" height="100">
-    <img src="imagem.png" alt="lampada" width="141" height="100">
-    <img src="imagem.png" alt="lampada" width="141" height="100">
+
+    <div class="modal shadow">
+        <div class="lamp-control">
+            <div class="close">
+                <i class="ion-close-round"></i>
+            </div>
+            <div class="rage-title">
+                Aumente / Diminua o brilho
+            </div>
+            <div class="item range">
+                <div class="left">
+                    <i class="icon ion-ios-lightbulb off"></i>
+                </div>
+
+                <input type="range" min="0" max="100" value="0">
+
+                <div class="right">
+                    <i class="icon ion-ios-lightbulb on"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header green">
+        <h1 class="align-center">LAMPART</h1>
+    </div>
+
+    <div class="row">
+        <div class="card shadow col-34">
+            <div class="status off">
+                DESLIGADA
+            </div>
+            <div class="icon-box">
+                <i class="ion-ios-lightbulb-outline off"></i>
+            </div>
+            <span class="card-title">LAMPADA 01</span>
+            <div class="card-control">
+                <button class="green full">CONFIGURAÇÕES</button>
+            </div>
+        </div>
+
+        <div class="card shadow col-34">
+            <div class="status on">
+                LIGADA
+            </div>
+            <div class="icon-box">
+                <i class="ion-ios-lightbulb-outline on"></i>
+            </div>
+            <span class="card-title">LAMPADA 01</span>
+            <div class="card-control">
+                <button class="green full">CONFIGURAÇÕES</button>
+            </div>
+        </div>
+
+        <div class="card shadow col-34">
+            <div class="icon-box">
+                <i class="ion-ios-lightbulb-outline on"></i>
+            </div>
+            <span class="card-title">LAMPADA 01</span>
+            <div class="card-control">
+                <button class="green full">CONFIGURAÇÕES</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="card shadow col-34">
+            <div class="icon-box">
+                <i class="ion-ios-lightbulb-outline"></i>
+            </div>
+            <div class="card-control">
+
+            </div>
+        </div>
+        <div class="card shadow col-34">
+            <div class="icon-box">
+                <i class="ion-ios-lightbulb-outline"></i>
+            </div>
+            <div class="card-control">
+
+            </div>
+        </div>
+        <div class="card shadow col-34">
+            <div class="icon-box">
+                <i class="ion-ios-lightbulb-outline"></i>
+            </div>
+            <div class="card-control">
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="mobileui/mobileui.js"></script>
 </body>
+
 </html>
