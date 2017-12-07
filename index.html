@@ -1,108 +1,69 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br" data-ng-app="app">
 
 <head>
-    <link rel="stylesheet" type="text/css" href="mobileui/fonts.css">
-    <link rel="stylesheet" type="text/css" href="mobileui/style.css">
-    <title>Teste inicial</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="mage.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="modal.css">
+  <title>tecno</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobileui/style.css">
+  <link rel="stylesheet" href="mobileui/fonts.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-grid-flexbox@1.0.1/css/the-grid.min.css">
 </head>
 
-<body>
-
-    <div class="modal shadow">
-        <div class="lamp-control">
-            <div class="close">
-                <i class="ion-close-round"></i>
-            </div>
-            <div class="rage-title">
-                Aumente / Diminua o brilho
-            </div>
-            <div class="item range">
-                <div class="left">
-                    <i class="icon ion-ios-lightbulb off"></i>
-                </div>
-
-                <input type="range" min="0" max="100" value="0">
-
-                <div class="right">
-                    <i class="icon ion-ios-lightbulb on"></i>
-                </div>
-            </div>
+<body data-ng-controller="IndexController as vm">
+  <!-- <div class="modal shadow">
+    <div class="lamp-control">
+      <div class="close">
+        <i class="ion-close-round"></i>
+      </div>
+      <div class="rage-title">
+        Controle do brilho
+      </div>
+      <div class="item range">
+        <div class="left">
+          <i class="icon ion-ios-lightbulb off"></i>
         </div>
+
+        <input type="range" min="0" max="100" value="0">
+
+        <div class="right">
+          <i class="icon ion-ios-lightbulb on"></i>
+        </div>
+      </div>
     </div>
+  </div> -->
 
-    <div class="header green">
-        <h1 class="align-center">LAMPART</h1>
+  <div class="content container wrap">
+    <div data-ng-repeat="lampada in vm.lampadas" class="card shadow col-12 col-xl-3 col-lg-4 col-md-4 col-sm-12">
+      <div class="status" data-ng-class="{ 'on' : lampada.status, 'off' : !lampada.status }">
+        {{!lampada.status ? 'DESLIGADA' : 'LIGADA'}}
+      </div>
+      <div class="icon-box">
+        <i class="ion-ios-lightbulb-outline" data-ng-class="{ 'on' : lampada.status, 'off' : !lampada.status }"></i>
+      </div>
+      <span class="card-title">LAMPADA 01</span>
+      <div class="card-control">
+        <div class="item range">
+          <div class="left">
+            <i class="icon ion-ios-mic-outline"></i>
+          </div>
+          
+          <input type="range" min="0" max="100" value="89">
+
+          <div class="right">
+            <i class="icon ion-ios-mic"></i>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="row">
-        <div class="card shadow col-34">
-            <div class="status off">
-                DESLIGADA
-            </div>
-            <div class="icon-box">
-                <i class="ion-ios-lightbulb-outline off"></i>
-            </div>
-            <span class="card-title">LAMPADA 01</span>
-            <div class="card-control">
-                <button class="green full">CONFIGURAÇÕES</button>
-            </div>
-        </div>
 
-        <div class="card shadow col-34">
-            <div class="status on">
-                LIGADA
-            </div>
-            <div class="icon-box">
-                <i class="ion-ios-lightbulb-outline on"></i>
-            </div>
-            <span class="card-title">LAMPADA 01</span>
-            <div class="card-control">
-                <button class="green full">CONFIGURAÇÕES</button>
-            </div>
-        </div>
-
-        <div class="card shadow col-34">
-            <div class="icon-box">
-                <i class="ion-ios-lightbulb-outline on"></i>
-            </div>
-            <span class="card-title">LAMPADA 01</span>
-            <div class="card-control">
-                <button class="green full">CONFIGURAÇÕES</button>
-            </div>
-        </div>
-
-    </div>
-    <div class="row">
-        <div class="card shadow col-34">
-            <div class="icon-box">
-                <i class="ion-ios-lightbulb-outline"></i>
-            </div>
-            <div class="card-control">
-
-            </div>
-        </div>
-        <div class="card shadow col-34">
-            <div class="icon-box">
-                <i class="ion-ios-lightbulb-outline"></i>
-            </div>
-            <div class="card-control">
-
-            </div>
-        </div>
-        <div class="card shadow col-34">
-            <div class="icon-box">
-                <i class="ion-ios-lightbulb-outline"></i>
-            </div>
-            <div class="card-control">
-
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript" src="mobileui/mobileui.js"></script>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="mobileui/mobileui.js"></script>
+<script src="app.js"></script>
 
 </html>
