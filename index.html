@@ -1,15 +1,67 @@
-<html>
- <head>
- <title>Teste inicial</title>
- <meta charset="UTF-8"> 
- <link rel="stylesheet" type="text/css" href="mage.css">
- </head>
-<body>
-<center><h1>Olá mundo!</h1>
-    
-    <img src="imagem.png" alt="lampada" width="141" height="100">
-    <img src="imagem.png" alt="lampada" width="141" height="100">
-    <img src="imagem.png" alt="lampada" width="141" height="100">
-    <img src="imagem.png" alt="lampada" width="141" height="100">
+<!DOCTYPE html>
+<html lang="pt-br" data-ng-app="app">
+
+<head>
+  <title>tecno</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+
+  <link rel="stylesheet" href="mobileui/fonts.css">
+  <link rel="stylesheet" href="mobileui/style.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="./manifest.json" />
+
+  <meta name="application-name" content="Save the world">
+  <link rel="icon" type="image/png" href="./images/icon@256.png" sizes="256x256">
+
+  <meta name="theme-color" content="#4caf50">
+  <meta name="msapplication-TileColor" content="#4caf50">
+  <meta name="msapplication-TileImage" content="./images/icon@256.png">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Save the world">
+  <link rel="apple-touch-icon" href="./images/icon@256.png">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/the-grid-flexbox@1.0.1/css/the-grid.min.css">
+</head>
+
+<body data-ng-controller="IndexController as vm">
+  <div class="header green">
+    <h1 class="align-center">SAVE THE WORLD</h1>
+  </div>
+  <div class="content">
+    <div class="container wrap">
+      <div data-ng-repeat="lampada in vm.lampadas" class="col-12 col-xl-3 col-lg-4 col-md-4 col-sm-4">
+        <div class="card shadow">
+          <div class="status" data-ng-class="{ 'on' : vm.isOn(lampada.intensity), 'off' : !vm.isOn(lampada.intensity) }">
+            {{!vm.isOn(lampada.intensity) ? 'DESLIGADA' : 'LIGADA'}}
+          </div>
+          <div class="icon-box">
+            <i class="ion-ios-lightbulb-outline" data-ng-class="{ 'on' : vm.isOn(lampada.intensity), 'off' : !vm.isOn(lampada.intensity) }"></i>
+          </div>
+          <div class="card-title">{{lampada.name}}</div>
+          <div class="card-control">
+            <div class="item range">
+              <div class="left">
+                <i class="icon ion-ios-lightbulb off"></i>
+              </div>
+              <input data-ng-model="lampada.intensity" type="range" min="0" max="100">
+
+              <div class="right">
+                <i class="icon ion-ios-lightbulb on "></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="mobileui/mobileui.js"></script>
+<script src="app.js"></script>
+<script src="config.js"></script>
+
 </html>
